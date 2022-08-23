@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+ 
+    <title>Favorite Player</title>
+</head>
+<body>
+    <!-- header section start -->
+    <header class="p-16 bg-black">
+        <div class=" md:flex  sm:flex md:flex-row  sm:flex-col justify-center items-center sm:content-center">
+            <div class="my-auto flex-auto md:w-1/4 sm:w-1/2 m-auto">
+                <img src="images/mosalah.jpeg" class="md:w-10/12 sm:mb-3 rounded" alt="" srcset="">
+            </div>
+            <div class="flex-auto md:w-1/2 sm:w-10/12 p-2 my-5">
+                <h1 class="text-center font-bold text-4xl text-white">Create Favotire Player List</h1>
+                <p class="text-center font-medium text-gray-500">Select Your favorite players from the list and make a team of five players. Go for it today. </p>
+            </div>
+            <div class="felx-auto">
+                <img src="images/paris.png" class="md:w-1/2 w-1/3 rounded-full  mx-auto" alt="">
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- header section end  -->
+    <!-- main section start  -->
+    <main>
+        <section class=" bg-gray-800 p-14">
+            <div class="md:flex  flex md:flex-row  flex-col">
+                <!-- player section start  -->
+                <div class="md:w-9/12 w-full grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="player h-full">
+                        <div class="card w-full bg-slate-600 shadow-xl">
+                            <figure class="px-4 pt-4">
+                              <img src="images/neymar.jpg" alt="neymar" class="rounded h-40 w-full" />
+                            </figure>
+                            <div class="card-body items-center text-center">
+                            <h2 class="card-title font-semibold text-slate-900">Neymar Jr</h2>
+                             <p class="text-slate-300">Brazil</p>
+                             <p class="text-slate-300">Goal: 250</p>
+                             <p class="text-slate-300">Asist: 123</p>
+                              <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToFavoriteList(this)">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="player h-full">
+                        <div class="card w-full bg-slate-600 shadow-xl">
+                            <figure class="px-4 pt-4">
+                              <img src="images/messi.jpg" alt="messi" class="rounded h-40 w-full" />
+                            </figure>
+                            <div class="card-body items-center text-center">
+                            <h2 class="card-title font-semibold text-slate-900">Lionel Messi</h2>
+                             <p class="text-slate-300">Argentina</p>
+                             <p class="text-slate-300">Goal: 550</p>
+                             <p class="text-slate-300">Asist: 233</p>
+                              <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToFavoriteList(this)">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="player h-full">
+                        <div class="card w-full bg-slate-500 shadow-xl">
+                            <figure class="px-4 pt-4">
+                              <img src="images/ronaldo.jpg" alt="cr7" class="rounded h-40 w-full" />
+                            </figure>
+                            <div class="card-body items-center text-center">
+                            <h2 class="card-title font-semibold text-slate-900">Cristiano Ronaldo</h2>
+                             <p class="text-slate-300">Purtogal</p>
+                             <p class="text-slate-300">Goal: 603</p>
+                             <p class="text-slate-300">Asist: 234</p>
+                              <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToFavoriteList(this)">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                                    </div>
+                <!-- player section end  -->
+                <!-- selected and calsulation section start  -->
+                <div class="md:w-3/12 w-full ">
+                  <div class="text-gray-300 rounded p-3 bg-black ml-2 divide-y divide-blue-200">
+                      <div class="mb-2">
+                        <h1 class="text-3xl font-semibold">Selected Players <span class="text-blue-600" id="total-selected-player">0</span></h1>
+                      </div>
+                      
+                      <div class="">
+                        <table class="table-auto w-full">
+                          <!-- head -->
+                          <tbody id="player-list">
+                            <!-- row 1 -->
+                            <!-- row 3 -->
+                          
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                  <div class="text-gray-300 rounded p-3 bg-black mt-3 ml-2 ">
+                   <div class="divide-y divide-blue-200">
+                    <div class="mb-2">
+                      <h1 class="text-3xl font-semibold text-center">Budget</h1>
+                    </div>
+                    
+                    <div class="">
+                      <div class="mt-3 flex justify-center">
+                        <div class="w-2/4">
+                          <h3>Per Player</h3>
+                      </div>
+                      <div class="w-2/4">
+                        <input type="number" class="w-full px-2 py-1 rounded text-black" name="" id="per-player-cost">
+                      </div>
+                      </div>
+                     <div class="mt-3">
+                      <button class="btn btn-primary w-full" onclick="calculatePlayerCost()">Calculate</button>
+                     </div>
+                    </div>
+                   </div>
+                    <div class="mt-3">
+                      <div class="mt-3 flex justify-center">
+                        <div class="w-2/4">
+                          <h3>Player Expenses</h3>
+                      </div>
+                      <div class="w-2/4">
+                      <h3>$<span id="">0</span></h3>
+                      </div>
+                      
+                      </div>
+                      <div class="mt-3 flex justify-center">
+                        <div class="w-2/4">
+                          <h3>Manager</h3>
+                      </div>
+                      <div class="w-2/4">
+                        <input type="number" class="w-full px-2 py-1 rounded text-black" name="" id="manager-cost">
+                      </div>
+                      </div>
+                      <div class="mt-3 flex justify-center">
+                        <div class="w-2/4">
+                          <h3>Coach</h3>
+                      </div>
+                      <div class="w-2/4">
+                        <input type="number" class="w-full px-2 py-1 rounded text-black" name="" id="coach-cost">
+                      </div>
+                      </div>
+                     <div class="mt-3">
+                      <button class="btn btn-primary w-full" onclick="calculateTotalCost()">Calculate Total</button>
+                     </div>
+                    </div>
+
+                    <div class="mt-3 flex justify-center">
+                      <div class="w-2/4">
+                        <h3>Total</h3>
+                    </div>
+                    <div class="w-2/4">
+                    <h3>$<span id="">0</span></h3>
+                    </div>
+                    
+                    </div>
+                    
+                </div>
+                </div>
+                <!-- selected and calsulation section end  -->
+            </div>
+        </section>
+        
+    </main>
+    <!-- main section end  -->
+
+    <script src="js/common.js"></script>
+    <script src="js/calculate.js"></script>
+</body>
+</html>
