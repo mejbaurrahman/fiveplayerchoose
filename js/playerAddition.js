@@ -4,9 +4,7 @@ const addToFavoriteList =(element)=>{
   
   if(playerListArray.length<5){
     const playerListEl = document.getElementById('player-list');
-    const totalSelectedPlayerEl = document.getElementById('total-selected-player');
     const playerNameEl = document.createElement('tr');
-    totalSelectedPlayerEl.innerText = playerListArray.length;
     playerNameEl.innerHTML=`
     <th><span>${playerListArray.length+1}</span>.</th>
       <td>${playerName}</td>
