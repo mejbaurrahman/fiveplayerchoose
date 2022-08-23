@@ -7,6 +7,9 @@ const calculatePlayerBudget=()=>{
         alert('Please Enter a positive Number for Per Player Budget.');
     }else if(playerBudget==''){
         alert('Enter the Per Player Budget');
+    }
+    else if(totalNumberOfPlayer<1){
+        alert('Warning! You have not select any player yet. Please select player to create player list.');
     }else{
         const playerExpenses= calculatePlayerExpenses(totalNumberOfPlayer, playerBudgetToNumber);
         const playerExpensesEl = document.getElementById('player-expenses');
@@ -27,6 +30,10 @@ const calculateTotalBudget=()=>{
         alert('Enter a positive Number for Manager Budget');
     }else if(parseFloat(coachBudget)<0){
         alert('Enter a positive Number for Coach Budget');
+    }else if(managerBudget==''){
+        alert('Fill the All Budget field');
+    }else if(coachBudget==''){
+        alert('Fill the All Budget field');
     }else{
         const totalBudget = totalBugetCalculate(playerExpenses, managerBudget, coachBudget);
         const totalBudgetEl = document.getElementById('total-budget');
