@@ -10,6 +10,8 @@ const calculatePlayerCost=()=>{
 
         const totalNumberOfPlayer =getTotalPlayersNumber();
         const playerExpenses= calculatePlayerExpenses(totalNumberOfPlayer, playerCostToNumber);
+        const playerExpensesEl = document.getElementById('player-expenses');
+        playerExpensesEl.innerText = playerExpenses;
     }
     
 }
