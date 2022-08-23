@@ -1,4 +1,7 @@
+/*array for tracking player list and size of the list*/
 const playerListArray = [];
+
+//add played to the player list
 const addToFavoriteList =(element)=>{
   const playerName = element.parentNode.parentNode.children[0].innerText;
   
@@ -14,7 +17,7 @@ const addToFavoriteList =(element)=>{
     playerListArray.push(playerName);
     
   }else{
-    alert('Warning! You already select 5 players!')
+    alert('Warning! You have already selected 5 players!')
   }
   
 

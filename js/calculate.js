@@ -8,6 +8,7 @@ document.getElementById('calculate-total-budget').addEventListener('click', func
     calculateTotalBudget();
 })
 
+//calculate player expenses
 const calculatePlayerBudget=()=>{
     const playerBudgetEl = document.getElementById('per-player-cost');
     const playerBudget = playerBudgetEl.value;
@@ -29,6 +30,8 @@ const calculatePlayerBudget=()=>{
     }
     
 }
+
+//calculate total budget
 const calculateTotalBudget=()=>{
     const managerBudgetEl = document.getElementById('manager-budget');
     const coachBudgetEl = document.getElementById('coach-budget');
