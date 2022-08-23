@@ -1,3 +1,13 @@
+
+//addEventListener for calculation button
+document.getElementById('calculate-player-expenses').addEventListener('click', function(){
+    calculatePlayerBudget();
+})
+
+document.getElementById('calculate-total-budget').addEventListener('click', function(){
+    calculateTotalBudget();
+})
+
 const calculatePlayerBudget=()=>{
     const playerBudgetEl = document.getElementById('per-player-cost');
     const playerBudget = playerBudgetEl.value;
@@ -11,6 +21,7 @@ const calculatePlayerBudget=()=>{
     else if(totalNumberOfPlayer<1){
         alert('Warning! You have not select any player yet. Please select player to create player list.');
     }else{
+        
         const playerExpenses= calculatePlayerExpenses(totalNumberOfPlayer, playerBudgetToNumber);
         const playerExpensesEl = document.getElementById('player-expenses');
         playerExpensesEl.innerText = playerExpenses;
