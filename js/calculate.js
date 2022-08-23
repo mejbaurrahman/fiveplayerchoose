@@ -4,7 +4,7 @@ const calculatePlayerBudget=()=>{
     const playerBudgetToNumber = parseFloat(playerBudget);
     const totalNumberOfPlayer =getTotalPlayersNumber();
     if(playerBudgetToNumber<0){
-        alert('Please Enter a positive Number.');
+        alert('Please Enter a positive Number for Per Player Budget.');
     }else if(playerBudget==''){
         alert('Enter the Per Player Budget');
     }else{
@@ -36,17 +36,18 @@ const calculateTotalBudget=()=>{
 
 
 }
+// players budget calculation only
 const calculatePlayerExpenses=(totalNumberOfPlayer, playerBudgetPerPlayer)=>{
      const totalBudgetForPlayers = totalNumberOfPlayer*playerBudgetPerPlayer;
      return totalBudgetForPlayers; 
 }
 
+// total budget calculation
 const totalBugetCalculate=(playerExpenses, managerBudget, coachBudget)=>{
     const playerExpensesToNumber = parseFloat(playerExpenses);
     const managerBudgetToNumber = parseFloat(managerBudget);
     const coachBudgetToNumber = parseFloat(coachBudget);
-
-   const totalBudget = playerExpensesToNumber+managerBudgetToNumber+coachBudgetToNumber;
+    const totalBudget = playerExpensesToNumber+managerBudgetToNumber+coachBudgetToNumber;
     return totalBudget;
    
 }
